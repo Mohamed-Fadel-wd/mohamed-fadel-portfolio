@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import BrandMark from "./BrandMark";
 
 export default function Hero({ copy }: { copy: { eyebrow: string; name: string; mantra: string } }) {
   const ref = useRef<HTMLElement>(null);
@@ -41,7 +42,7 @@ export default function Hero({ copy }: { copy: { eyebrow: string; name: string; 
         <span className="beam beam-two" />
         <span className="beam beam-three" />
         <span className="beam beam-four" />
-        <b><span className="brand-crop brand-crop-hero" /></b>
+        <b><BrandMark className="hero-logo" /></b>
       </div>
       <div className="spark-field" aria-hidden="true">
         {Array.from({ length: 18 }).map((_, index) => <i key={index} />)}

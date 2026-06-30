@@ -20,6 +20,19 @@ export default function Projects({ title }: { title: string }) {
           duration: 0.9,
           ease: "power3.out",
         });
+        const visual = card.querySelector(".project-visual");
+        const move = (event: PointerEvent) => {
+          const box = card.getBoundingClientRect();
+          gsap.to(visual, {
+            rotateY: ((event.clientX - box.left) / box.width - 0.5) * 14,
+            rotateX: -((event.clientY - box.top) / box.height - 0.5) * 10,
+            duration: 0.6,
+            ease: "power3.out",
+          });
+        };
+        const leave = () => gsap.to(visual, { rotateX: 0, rotateY: 0, duration: 0.8, ease: "elastic.out(1,.45)" });
+        card.addEventListener("pointermove", move);
+        card.addEventListener("pointerleave", leave);
       });
     }, ref);
 
