@@ -1,0 +1,7 @@
+node_modules
+.next
+.env*
+public/mf-logo-chroma.png
+tmp
+*.log
+.DS_Store
