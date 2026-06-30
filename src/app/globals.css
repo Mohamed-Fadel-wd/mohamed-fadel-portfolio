@@ -624,6 +624,18 @@ button { font: inherit; }
 .contact-bottom a:hover { color: #fffaf1; }
 
 [dir="rtl"] .hero,[dir="rtl"] .section,[dir="rtl"] .contact { text-align: right; }
+[dir="rtl"] { font-family: var(--font-inter), "Segoe UI", Tahoma, sans-serif; }
+[dir="rtl"] .hero h1 span:last-child { margin-left:0; margin-right:17vw; }
+[dir="rtl"] .hero-statement { margin-left:0; margin-right:18vw; }
+[dir="rtl"] .hero-facts { right:auto; left:clamp(22px,4.5vw,72px); }
+[dir="rtl"] .hero-code { right:auto; left:clamp(22px,4.5vw,72px); text-align:left; }
+[dir="rtl"] .about-copy::before { left:auto; right:0; background:linear-gradient(-90deg,var(--ember),transparent); }
+[dir="rtl"] .about blockquote,[dir="rtl"] .projects-heading p,[dir="rtl"] .contact-copy p { border-left:0; border-right:2px solid var(--ember); padding-left:0; padding-right:22px; }
+[dir="rtl"] .principle-card > i { right:auto; left:26px; transform:scaleX(-1); }
+[dir="rtl"] .project:hover { padding-left:26px; padding-right:26px; }
+[dir="rtl"] .contact-plate { right:auto; left:0; }
+[dir="rtl"] .email span { margin-left:0; margin-right:30px; }
+[dir="rtl"] .capability-rail { flex-direction:row-reverse; }
 
 @media (max-width: 900px) {
   .hero-facts { width: min(44vw,330px); }
@@ -647,7 +659,9 @@ button { font: inherit; }
   .hero-bottom > span { display: none; }
   .hero h1 { font-size: clamp(64px,20vw,94px); line-height: .86; }
   .hero h1 span:last-child { margin-left: 8vw; }
+  [dir="rtl"] .hero h1 span:last-child { margin-left:0; margin-right:8vw; }
   .hero-statement { margin-left: 8vw; gap: 12px; align-items: flex-start; }
+  [dir="rtl"] .hero-statement { margin-left:0; margin-right:8vw; }
   .hero-statement > span:last-child { display: none; }
   .hero-statement p { max-width: 245px; line-height: 1.08; }
   .mf-sculpture { width: 410px; height: 430px; right: -150px; top: 24vh; opacity: .58; }
@@ -691,13 +705,10 @@ button { font: inherit; }
 
 /* MF identity system */
 :root { --bg:#060606; --panel:#101010; --fg:#f7f7f4; --soft:#d4d4cf; --muted:#858585; --line:rgba(255,255,255,.14); --ember:#0b5ed7; --gold:#73a9ff; --blue:#0b5ed7; }
-.brand-crop { display:block; background:url("/mf-logo-transparent.png") center 43% / 270% auto no-repeat; }
 .mark { gap:9px; }
-.brand-crop-nav { width:46px; height:44px; }
 .brand-name { color:#fff; font:800 10px/.78 var(--font-space); letter-spacing:-.055em; }
 .pre-brand { position:absolute; right:clamp(24px,4vw,64px); top:clamp(24px,4vw,64px); display:flex; align-items:center; gap:11px; color:#fff; font:800 12px/.78 var(--font-space); letter-spacing:-.055em; }
-.brand-crop-pre { width:54px; height:50px; }
-.brand-crop-hero { width:250px; height:112px; background-size:235% auto; background-position:center 36%; filter:saturate(1.12) drop-shadow(0 24px 42px rgba(0,0,0,.55)); }
+.pre-brand img { width:58px; height:auto; object-fit:contain; }
 body::before { opacity:.48; background-size:8.333vw 8.333vw; }
 .canvas-bg { background:linear-gradient(120deg,transparent 0 63%,rgba(11,94,215,.12) 63.1% 64%,transparent 64.1%),radial-gradient(circle at 64% 34%,rgba(11,94,215,.3),transparent 27%),#060606; }
 .pre-blue { background:#0b5ed7; } .pre-black { background:#070707; } .load-fill { background:var(--ember); }
@@ -724,7 +735,7 @@ body::before { opacity:.48; background-size:8.333vw 8.333vw; }
 .project:hover .project-sigil span,.project:hover .project-sigil b { color:white; }
 .contact-orbit { border-radius:0; transform:rotate(-8deg); color:white; box-shadow:18px 18px 0 rgba(115,169,255,.16); }
 .contact-orbit:hover { transform:rotate(0deg) scale(1.04); background:white; color:var(--ember); }
-@media (max-width:700px) { .brand-crop-nav{transform:scale(.82);transform-origin:left center}.brand-crop-pre{display:none}.brand-crop-hero{transform:scale(.72)} }
+@media (max-width:700px) { .pre-brand{display:none} }
 
 /* Kinetic interaction layer */
 @media (pointer:fine) {
@@ -761,6 +772,8 @@ body::before { opacity:.48; background-size:8.333vw 8.333vw; }
 .project-list { perspective:1200px; }
 .project-visual { transform-style:preserve-3d; will-change:transform; }
 .project:hover .visual-core { color:rgba(255,255,255,.15); text-shadow:18px 12px 0 rgba(11,94,215,.3); }
+.visual-core img { width:58%; height:auto; opacity:.11; filter:drop-shadow(14px 12px 0 rgba(11,94,215,.28)); }
+.portrait-fallback img { width:min(45%,360px); height:auto; object-fit:contain; filter:drop-shadow(0 30px 70px rgba(11,94,215,.32)); }
 .visual-line { transition:transform .6s,filter .6s; }
 .project:hover .visual-line { filter:drop-shadow(0 0 12px #73a9ff); transform:rotate(-22deg) scaleX(1.18); }
 .contact { background:radial-gradient(circle at 75% 45%,rgba(11,94,215,.24),transparent 28%),#050505; }

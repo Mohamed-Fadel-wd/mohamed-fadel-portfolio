@@ -29,7 +29,7 @@ export default function Preloader({ onEnter }: { onEnter: () => void }) {
     <div ref={root} className="preloader">
       <div className="pre-blue" /><div className="pre-black" />
       <div className="pre-content">
-        <span className="pre-brand" aria-hidden="true"><span className="brand-crop brand-crop-pre" /><span>MOHAMEED<br />FADEL.</span></span>
+        <span className="pre-brand" aria-hidden="true"><img src="/mf-mark-exact.png" alt="" /><span>MOHAMEED<br />FADEL.</span></span>
         <p className="system-label">MF / SYSTEM INITIALIZATION</p>
         <h1><span>Booting</span><br /><span className="accent">{phrase.split("").map((letter, index) => <span className="boot-letter" key={index}>{letter === " " ? "\u00a0" : letter}</span>)}</span></h1>
         <div className="load-track"><span className="load-fill" /></div>

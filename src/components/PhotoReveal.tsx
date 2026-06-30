@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-export default function PhotoReveal() {
+export default function PhotoReveal({ captions }: { captions: readonly [string,string] }) {
   const ref = useRef<HTMLElement>(null);
   const [missing, setMissing] = useState(false);
   useEffect(() => {
@@ -17,9 +17,9 @@ export default function PhotoReveal() {
   return (
     <section ref={ref} className="photo-section">
       <div className="portrait-mask">
-        {!missing ? <img className="portrait-media" src="/photo.jpg" alt="Mohamed Fadel" onError={() => setMissing(true)} /> : <div className="portrait-media portrait-fallback"><span>MF</span></div>}
+        {!missing ? <img className="portrait-media" src="/photo.jpg" alt="Mohamed Fadel" onError={() => setMissing(true)} /> : <div className="portrait-media portrait-fallback"><img src="/mf-mark-exact.png" alt="Mohamed Fadel" /></div>}
       </div>
-      <div className="photo-caption"><span>THE HUMAN BEHIND THE SYSTEMS</span><span>DISCIPLINE IS A DAILY DECISION.</span></div>
+      <div className="photo-caption"><span>{captions[0]}</span><span>{captions[1]}</span></div>
     </section>
   );
 }
