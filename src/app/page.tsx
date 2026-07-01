@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Preloader from "@/components/Preloader";
 import CanvasBackground from "@/components/CanvasBackground";
 import Navbar from "@/components/Navbar";
@@ -14,6 +14,16 @@ import { useLenis } from "@/hooks/useLenis";
 export default function Home() {
   const [entered, setEntered] = useState(false);
   const [locale, setLocale] = useState<Locale>("en");
+  useEffect(() => {
+    const requested = new URLSearchParams(location.search).get("lang");
+    const saved = localStorage.getItem("mf-locale");
+    if (requested === "ar" || requested === "en") setLocale(requested);
+    else if (saved === "ar" || saved === "en") setLocale(saved);
+  }, []);
+  const changeLocale = (next: Locale) => {
+    setLocale(next);
+    localStorage.setItem("mf-locale", next);
+  };
   const c = content[locale];
   useLenis(entered);
   return (
@@ -21,7 +31,7 @@ export default function Home() {
       <CanvasBackground />
       {!entered && <Preloader onEnter={() => setEntered(true)} />}
       <div className={`site ${entered ? "is-visible" : ""}`}>
-        <Navbar nav={c.nav} locale={locale} setLocale={setLocale} />
+        <Navbar nav={c.nav} locale={locale} setLocale={changeLocale} />
         <Hero copy={c.hero} />
         <About copy={c.about} />
         <PhotoReveal captions={c.photo} />
