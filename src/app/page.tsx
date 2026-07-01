@@ -10,7 +10,6 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import { content, type Locale } from "@/data/content";
 import { useLenis } from "@/hooks/useLenis";
-import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   const [entered, setEntered] = useState(false);
@@ -20,7 +19,6 @@ export default function Home() {
   return (
     <main dir={locale === "ar" ? "rtl" : "ltr"}>
       <CanvasBackground />
-      <CustomCursor />
       {!entered && <Preloader onEnter={() => setEntered(true)} />}
       <div className={`site ${entered ? "is-visible" : ""}`}>
         <Navbar nav={c.nav} locale={locale} setLocale={setLocale} />
