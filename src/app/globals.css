@@ -785,3 +785,26 @@ body::before { opacity:.48; background-size:8.333vw 8.333vw; }
   .cursor-dot,.cursor-ring { display:none!important; }
   .hero-grid,.hero-lens::after,.orb i,.signal-card em::before { animation:none!important; }
 }
+
+/* Case studies */
+.case-page { min-height:100vh; background:#050505; color:#f7f7f4; overflow:hidden; }
+.case-nav { position:fixed; z-index:20; inset:0 0 auto; height:76px; padding:0 clamp(22px,4.5vw,72px); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); background:rgba(5,5,5,.72); backdrop-filter:blur(18px); font:800 9px var(--font-space); letter-spacing:.14em; text-transform:uppercase; }
+.case-nav img { width:54px; height:auto; }
+.case-nav button { border:1px solid var(--line); color:white; background:transparent; padding:12px 16px; cursor:pointer; }
+.case-hero { min-height:100svh; position:relative; display:flex; flex-direction:column; justify-content:flex-end; padding:120px clamp(22px,5vw,82px) 8vh; isolation:isolate; }
+.case-grid { position:absolute; inset:0; z-index:-3; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px); background-size:8.333vw 8.333vw; }
+.case-hero::after { content:""; position:absolute; z-index:-2; inset:0; background:linear-gradient(120deg,transparent 0 46%,rgba(11,94,215,.6) 46.1% 61%,transparent 61.1%),radial-gradient(circle at 72% 40%,rgba(11,94,215,.3),transparent 26%); }
+.case-mark { position:absolute; z-index:-1; right:10vw; top:18vh; width:min(38vw,650px); opacity:.14; filter:drop-shadow(0 40px 60px #000); }
+.case-index,.case-type { font:800 10px var(--font-space); letter-spacing:.18em; text-transform:uppercase; color:#969696; }
+.case-type { margin:0 0 22px; color:#73a9ff; }
+.case-hero h1 { margin:0; max-width:1200px; font:800 clamp(72px,12vw,210px)/.76 var(--font-space); letter-spacing:-.085em; text-transform:uppercase; }
+.case-intro { max-width:700px; margin:42px 0 26px; font-size:clamp(17px,1.6vw,25px); line-height:1.45; color:#c6c6c1; }
+.case-tags { display:flex; gap:8px; flex-wrap:wrap; }.case-tags span{border:1px solid var(--line);padding:8px 12px;font:700 9px var(--font-space);letter-spacing:.12em;text-transform:uppercase}
+.case-story { padding:clamp(100px,13vw,210px) clamp(22px,8vw,140px); display:grid; gap:12vw; }
+.case-block { min-height:55vh; display:grid; grid-template-columns:100px minmax(250px,.6fr) minmax(300px,1fr); align-items:start; gap:5vw; border-top:1px solid var(--line); padding-top:28px; }
+.case-block>span { font:800 11px var(--font-space); color:#73a9ff; }.case-block h2{margin:0;font:600 clamp(42px,6vw,98px)/.88 var(--font-space);letter-spacing:-.065em}.case-block p{margin:0;font-size:clamp(18px,2vw,30px);line-height:1.5;color:#bbb}
+.case-blue { padding:clamp(30px,5vw,80px); background:#0b5ed7; transform:rotate(-1deg); }.case-blue>span,.case-blue p{color:white}
+.case-system ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.case-system li{display:flex;gap:26px;padding:24px 0;border-bottom:1px solid var(--line);font-size:clamp(18px,2vw,30px)}.case-system li b{font:800 10px var(--font-space);color:#73a9ff}
+.case-next { min-height:70vh; padding:8vw; display:flex; flex-direction:column; justify-content:center; background:#0b5ed7; position:relative; }.case-next span{font:800 10px var(--font-space);letter-spacing:.18em;text-transform:uppercase}.case-next strong{margin-top:28px;max-width:1200px;font:800 clamp(60px,10vw,170px)/.8 var(--font-space);letter-spacing:-.075em}.case-next>b{position:absolute;right:8vw;font:400 clamp(70px,10vw,160px) var(--font-space)}
+[dir="rtl"].case-page { text-align:right; }.case-page[dir="rtl"] .case-mark{right:auto;left:10vw}.case-page[dir="rtl"] .case-next>b{right:auto;left:8vw}
+@media(max-width:700px){.case-hero h1{font-size:18vw}.case-mark{width:70vw;right:-20vw}.case-block{grid-template-columns:1fr;min-height:auto;gap:28px}.case-story{gap:100px}.case-blue{margin-inline:-10px}.case-next{min-height:58vh}.case-next>b{bottom:8vw}}
