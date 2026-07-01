@@ -8,6 +8,7 @@ import About from "@/components/About";
 import PhotoReveal from "@/components/PhotoReveal";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import CustomCursor from "@/components/CustomCursor";
 import { content, type Locale } from "@/data/content";
 import { useLenis } from "@/hooks/useLenis";
 
@@ -28,6 +29,7 @@ export default function Home() {
   useLenis(entered);
   return (
     <main dir={locale === "ar" ? "rtl" : "ltr"}>
+      <CustomCursor />
       <CanvasBackground />
       {!entered && <Preloader onEnter={() => setEntered(true)} />}
       <div className={`site ${entered ? "is-visible" : ""}`}>
